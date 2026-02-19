@@ -16,17 +16,20 @@ body {
   background-color: #111;
   color: white;
   overflow-x: hidden;
+
+  /* Custom Scrollbar - Hide it globally */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  display: none;
-}
-
--ms-overflow-style: none;  /* IE and Edge */
-scrollbar-width: none;  /* Firefox */
