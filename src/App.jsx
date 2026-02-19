@@ -1,16 +1,18 @@
 import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import requests from "./api/requests";
 import Row from "./components/Row/Row";
 import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 import styles from "./App.module.css";
 
-function App() {
+function Dashboard() {
   return (
     <div className={styles.app}>
       <Navbar />
       <Banner />
-
       <div className={styles.rows_container}>
         <Row
           title="NETFLIX ORIGINALS"
@@ -26,6 +28,17 @@ function App() {
         <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/" element={<Navigate to="/register" replace />} />
+    </Routes>
   );
 }
 
