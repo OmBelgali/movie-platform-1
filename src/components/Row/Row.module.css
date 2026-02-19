@@ -52,12 +52,18 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 10px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 15px 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 0 0 8px 8px;
     pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .row_item:hover .row_item_info {
@@ -65,17 +71,35 @@
 }
 
 .row_item_title {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: white;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     text-align: center;
     margin: 0;
-    transform: translateY(10px);
-    transition: transform 0.3s ease;
+    transform: translateY(15px);
+    transition: transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .row_item:hover .row_item_title {
     transform: translateY(0);
+}
+
+.row_item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    pointer-events: none;
+}
+
+.row_item:hover::after {
+    border-color: rgba(229, 9, 20, 0.5);
+    /* Netflix red accent on hover */
 }
 
 @media (max-width: 768px) {
