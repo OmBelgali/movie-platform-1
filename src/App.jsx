@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import requests from "./api/requests";
 import Row from "./components/Row/Row";
 import Banner from "./components/Banner/Banner";
-import Navbar from "./components/Navbar/Navbar";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -17,7 +16,7 @@ function Dashboard() {
         <Banner />
         <div className={styles.rows_container}>
           <Row
-            title="NETFLIX ORIGINALS"
+            title="New this week"
             fetchUrl={requests.fetchNetflixOriginals}
             isLargeRow
           />
