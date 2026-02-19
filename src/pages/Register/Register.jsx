@@ -26,7 +26,8 @@ function Register() {
         setLoading(true);
 
         try {
-            await axios.post("http://localhost:5000/api/register", formData);
+            const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+            await axios.post(`${apiUrl}/api/register`, formData);
             alert("Registration successful! Redirecting to login...");
             navigate("/login");
         } catch (err) {
