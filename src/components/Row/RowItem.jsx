@@ -14,11 +14,11 @@ function RowItem({ movie, isLarge }) {
                 alt={movie.name}
                 loading="lazy"
             />
-            {/* <div className={styles.row_item_info}>
+            <div className={styles.row_item_info}>
                 <p className={styles.row_item_title}>
                     {movie?.title || movie?.name || movie?.original_name}
                 </p>
-            </div> */}
+            </div>
         </div>
     );
 }

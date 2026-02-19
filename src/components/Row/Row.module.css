@@ -47,6 +47,37 @@
     max-height: 280px;
 }
 
+.row_item_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 8px 8px;
+    pointer-events: none;
+}
+
+.row_item:hover .row_item_info {
+    opacity: 1;
+}
+
+.row_item_title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin: 0;
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.row_item:hover .row_item_title {
+    transform: translateY(0);
+}
+
 @media (max-width: 768px) {
     .row {
         margin-left: 10px;
