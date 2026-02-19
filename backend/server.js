@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const { pool, initDb } = require('./db');
 require('dotenv').config();
 
@@ -25,11 +25,11 @@ app.post('/api/register', async (req, res) => {
         );
         res.status(201).json({ message: "User registered successfully", user: result.rows[0] });
     } catch (err) {
-        console.error(err.message);
+        console.error("Registration Server Error:", err);
         if (err.code === '23505') {
             return res.status(400).json({ error: "User ID or Email already exists" });
         }
-        res.status(500).json({ error: "Internal server error" });
+        res.status(500).json({ error: `Internal server error: ${err.message}` });
     }
 });
 

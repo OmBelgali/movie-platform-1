@@ -31,7 +31,8 @@ function Register() {
             alert("Registration successful! Redirecting to login...");
             navigate("/login");
         } catch (err) {
-            setError(err.response?.data?.error || "Registration failed");
+            console.error("Registration Error Detail:", err);
+            setError(err.response?.data?.error || "Registration failed. Check console for details.");
         } finally {
             setLoading(false);
         }
