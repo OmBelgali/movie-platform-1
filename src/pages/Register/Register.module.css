@@ -3,20 +3,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at top left, #1a0a0a, #0c0f17, #020617);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
     padding: 20px;
+    font-family: 'Inter', 'Roboto', sans-serif;
 }
 
 .register_card {
-    background: rgba(26, 32, 44, 0.4);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
-    padding: 60px;
+    padding: 60px 68px;
     width: 100%;
     max-width: 600px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    text-align: left;
 }
 
 .form_header h1 {
@@ -24,6 +29,7 @@
     font-weight: 700;
     margin-bottom: 28px;
     color: white;
+    letter-spacing: -0.5px;
 }
 
 .register_form {
@@ -52,17 +58,18 @@
     width: 100%;
     padding: 16px 20px;
     background: #333;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 4px;
     color: white;
     font-size: 1rem;
-    transition: background 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input_group input:focus,
 .input_group_full input:focus {
     outline: none;
     background: #454545;
+    border-bottom: 2px solid #e50914;
 }
 
 .register_button {
@@ -79,15 +86,22 @@
     justify-content: center;
     gap: 10px;
     margin-top: 24px;
-    transition: background 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
 }
 
 .register_button:hover:not(:disabled) {
     background: #f40612;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(229, 9, 20, 0.4);
+}
+
+.register_button:active:not(:disabled) {
+    transform: translateY(0);
 }
 
 .register_button:disabled {
-    opacity: 0.6;
+    opacity: 0.5;
     cursor: not-allowed;
 }
 
@@ -98,10 +112,23 @@
     border-radius: 4px;
     margin-bottom: 16px;
     font-size: 0.9rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .social_hint {
-    margin-top: 30px;
+    margin-top: 40px;
     color: #737373;
     font-size: 1rem;
 }
@@ -110,6 +137,7 @@
     color: white;
     text-decoration: none;
     font-weight: 500;
+    transition: all 0.2s;
 }
 
 .social_hint a:hover {
@@ -117,15 +145,15 @@
 }
 
 @media (max-width: 600px) {
+    .register_card {
+        padding: 40px 30px;
+    }
+
     .input_grid {
         grid-template-columns: 1fr;
     }
 
     .input_group_full {
         grid-column: span 1;
-    }
-
-    .register_card {
-        padding: 40px 20px;
     }
 }
