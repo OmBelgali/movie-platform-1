@@ -23,8 +23,8 @@ function Login() {
                 password,
             });
             console.log(response.data);
-            // In a real app, we'd store a token. Here we'll just redirect.
-            window.location.href = "https://movie-platform-1.vercel.app/";
+            // Redirect to the movie platform dashboard
+            navigate("/dashboard");
         } catch (err) {
             setError(err.response?.data?.error || "Login failed");
         } finally {
