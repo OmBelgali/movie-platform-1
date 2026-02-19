@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import styles from "./Login.module.css";
-import { User, Lock, ArrowRight } from "lucide-react";
 
 function Login() {
     const [userId, setUserId] = useState("");
@@ -37,14 +36,12 @@ function Login() {
             <div className={styles.glass_card}>
                 <div className={styles.login_header}>
                     <h1>Sign In</h1>
-                    <p>Stay updated on your favorite movies</p>
                 </div>
 
                 {error && <div className={styles.error_msg}>{error}</div>}
 
                 <form onSubmit={handleLogin} className={styles.login_form}>
                     <div className={styles.input_group}>
-                        <User className={styles.input_icon} size={20} />
                         <input
                             type="text"
                             placeholder="Username"
@@ -55,7 +52,6 @@ function Login() {
                     </div>
 
                     <div className={styles.input_group}>
-                        <Lock className={styles.input_icon} size={20} />
                         <input
                             type="password"
                             placeholder="Password"
@@ -65,19 +61,18 @@ function Login() {
                         />
                     </div>
 
-                    <div className={styles.forgot_password}>
-                        <a href="#">Forgot Password?</a>
-                    </div>
-
                     <button type="submit" className={styles.login_button} disabled={loading}>
                         {loading ? "Signing In..." : "Sign In"}
-                        {!loading && <ArrowRight size={20} />}
                     </button>
+
+                    <div className={styles.forgot_password}>
+                        <a href="#">Need help?</a>
+                    </div>
                 </form>
 
                 <div className={styles.login_footer}>
                     <p>
-                        Don't have an account? <Link to="/register">Create Account</Link>
+                        New to Movie Platform? <Link to="/register">Sign up now.</Link>
                     </p>
                 </div>
             </div>
