@@ -33,6 +33,10 @@ function Login() {
 
     return (
         <div className={styles.login_container}>
+            {/* Background Glow Elements */}
+            <div className={`${styles.glow_orb} ${styles.glow_one}`}></div>
+            <div className={`${styles.glow_orb} ${styles.glow_two}`}></div>
+
             <div className={styles.glass_card}>
                 <div className={styles.login_header}>
                     <h1>Sign In</h1>
@@ -64,10 +68,6 @@ function Login() {
                     <button type="submit" className={styles.login_button} disabled={loading}>
                         {loading ? "Signing In..." : "Sign In"}
                     </button>
-
-                    <div className={styles.forgot_password}>
-                        <a href="#">Need help?</a>
-                    </div>
                 </form>
 
                 <div className={styles.login_footer}>

@@ -39,6 +39,10 @@ function Register() {
 
     return (
         <div className={styles.register_container}>
+            {/* Background Glow Elements */}
+            <div className={`${styles.glow_orb} ${styles.glow_one}`}></div>
+            <div className={`${styles.glow_orb} ${styles.glow_two}`}></div>
+
             <div className={styles.register_card}>
                 <div className={styles.form_header}>
                     <h1>Register</h1>
