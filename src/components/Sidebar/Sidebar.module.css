@@ -1,0 +1,121 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 68px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    z-index: 1000;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo_container {
+    margin-bottom: 40px;
+}
+
+.brand_initial {
+    color: #e50914;
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+.nav_icons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.icon_group {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.bottom_icons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.icon_button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_button:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.icon_button.active {
+    color: white;
+}
+
+.icon_button.active::after {
+    content: "";
+    position: absolute;
+    left: -18px;
+    width: 4px;
+    height: 24px;
+    border-radius: 0 4px 4px 0;
+    background-color: #e50914;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: 60px;
+        bottom: 0;
+        top: auto;
+        flex-direction: row;
+        padding-top: 0;
+        border-right: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        justify-content: space-around;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    .logo_container {
+        display: none;
+    }
+
+    .nav_icons {
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 0;
+        justify-content: space-around;
+    }
+
+    .icon_group,
+    .bottom_icons {
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-around;
+        width: 45%;
+    }
+
+    .icon_button.active::after {
+        left: 50%;
+        bottom: -8px;
+        top: auto;
+        width: 20px;
+        height: 3px;
+        transform: translateX(-50%);
+        border-radius: 3px 3px 0 0;
+    }
+}

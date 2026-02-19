@@ -38,17 +38,29 @@ function Banner() {
             }}
         >
             <div className={styles.banner_contents}>
+                <div className={styles.banner_series_label}>
+                    <span className={styles.n_initial}>N</span>
+                    <span className={styles.series_text}>SERIES</span>
+                </div>
                 <h1 className={styles.banner_title}>
                     {movie?.title || movie?.name || movie?.original_name}
                 </h1>
+
+                <div className={styles.banner_metadata}>
+                    <div className={styles.imdb_tag}>
+                        <span className={styles.imdb_badge}>IMDb</span>
+                        <span className={styles.imdb_rating}>8.8/10</span>
+                    </div>
+                    <span className={styles.stream_count}>2B+ Streams</span>
+                </div>
+
                 <div className={styles.banner_buttons}>
                     <button className={styles.banner_button_play}>
-                        <Play size={24} fill="black" />
+                        <Play size={20} fill="currentColor" />
                         <span>Play</span>
                     </button>
-                    <button className={styles.banner_button_info}>
-                        <Info size={24} />
-                        <span>My List</span>
+                    <button className={styles.banner_button_trailer}>
+                        <span>Watch Trailer</span>
                     </button>
                 </div>
                 <h1 className={styles.banner_description}>

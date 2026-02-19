@@ -1,8 +1,38 @@
-.app {
-    background-color: #111;
+.app_container {
+    display: flex;
+    background-color: #000;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.main_content {
+    flex: 1;
+    margin-left: 68px;
+    /* Width of the sidebar */
+    position: relative;
+    width: calc(100% - 68px);
 }
 
 .rows_container {
-    padding-top: 20px;
-    padding-bottom: 40px;
+    margin-top: -150px;
+    padding: 0 4%;
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .app_container {
+        flex-direction: column;
+    }
+
+    .main_content {
+        margin-left: 0;
+        width: 100%;
+        padding-bottom: 60px;
+        /* Space for mobile bottom bar */
+    }
+
+    .rows_container {
+        margin-top: -50px;
+    }
 }
